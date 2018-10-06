@@ -1,0 +1,29 @@
+{
+  "name": "jpmc4g",
+  "version": "1.0.0",
+  "description": "JP Morgan Code For Good - United Way",
+  "main": "index.js",
+  "dependencies": {
+    "clarifai": "^2.8.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallas2018/team-5.git"
+  },
+  "keywords": [
+    "ml",
+    "ai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallas2018/team-5/issues"
+  },
+  "homepage": "https://github.com/dallas2018/team-5#readme"
+}
