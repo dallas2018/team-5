@@ -37,8 +37,19 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     implementation 'com.firebaseui:firebase-ui-auth:4.2.0'
-    implementation 'com.google.firebase:firebase-firestore:17.1.1'
+    implementation 'com.google.firebase:firebase-firestore:17.1.0'
     implementation 'com.facebook.android:facebook-login:4.37.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+    implementation 'com.zhihu.android:matisse:+'
 }
 
 apply plugin: 'com.google.gms.google-services'

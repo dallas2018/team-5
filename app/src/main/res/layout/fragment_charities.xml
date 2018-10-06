@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    >
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/lyt_parent"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/RippleStyleBlack"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_charity1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@color/overlay_dark_10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/overlay_dark_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large"
+                >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Red Cross"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <android.support.v7.widget.AppCompatRadioButton
+        app:layout_constraintStart_toEndOf="@id/lyt_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/lyt_parent2"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lyt_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/RippleStyleBlack"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_charity2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@color/overlay_dark_10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/overlay_dark_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large"
+                >
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Feeding America"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <android.support.v7.widget.AppCompatRadioButton
+        app:layout_constraintStart_toEndOf="@id/lyt_parent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/lyt_parent3"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyt_parent"
+        style="@style/RippleStyleBlack"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_charity3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@color/overlay_dark_10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/overlay_dark_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large"
+                >
+
+                <TextView
+                    android:id="@+id/nam3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Boys and Girls Club"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <android.support.v7.widget.AppCompatRadioButton
+        app:layout_constraintStart_toEndOf="@id/lyt_parent3"
+        app:layout_constraintTop_toTopOf="@id/lyt_parent3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/lyt_parent4"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/lyt_parent3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyt_parent2"
+        style="@style/RippleStyleBlack"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_charity4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@color/overlay_dark_10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/overlay_dark_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large"
+                >
+
+                <TextView
+                    android:id="@+id/nam4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Charity: Water"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <android.support.v7.widget.AppCompatRadioButton
+        app:layout_constraintStart_toEndOf="@id/lyt_parent4"
+        app:layout_constraintTop_toTopOf="@id/lyt_parent4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</android.support.constraint.ConstraintLayout>
