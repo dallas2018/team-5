@@ -34,6 +34,8 @@ class PurchaseViewController : UIViewController, UICollectionViewDelegate, UICol
         cellLabel.textColor = .white
         
         cell.contentView.backgroundColor = nil
+        cell.layer.borderColor = UIColor.clear.cgColor
+        cell.layer.borderWidth = 4
         
         return cell
     }
@@ -41,6 +43,8 @@ class PurchaseViewController : UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.contentView.backgroundColor = UIColor.green.withAlphaComponent(0.4)
+        cell?.layer.borderColor = UIColor.green.cgColor
+        cell?.layer.borderWidth = 4
     }
     
     var marketObject : MarketObject!
