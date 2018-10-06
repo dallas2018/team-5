@@ -1,0 +1,27 @@
+{
+  "name": "jpmc4g",
+  "version": "1.0.0",
+  "description": "JP Morgan Code For Good - United Way",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallas2018/team-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallas2018/team-5/issues"
+  },
+  "homepage": "https://github.com/dallas2018/team-5#readme",
+  "dependencies": {
+    "@google-cloud/vision": "^0.22.1",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "firebase-admin": "^6.0.0"
+  }
+}
