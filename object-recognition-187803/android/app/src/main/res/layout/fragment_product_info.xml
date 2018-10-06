@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRODUCT DETAILS"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/grey_40"
+            app:fontFamily="sans-serif-medium"
+            />
+
+        <EditText
+            style="@style/EditText.Flat.Grey"
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:hint="Title"
+            android:minHeight="@dimen/spacing_xmlarge"
+            />
+
+        <EditText
+            style="@style/EditText.Flat.Grey"
+            android:id="@+id/et_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:hint="Brand"
+            android:minHeight="@dimen/spacing_xmlarge"
+            />
+
+        <EditText
+            style="@style/EditText.Flat.Grey"
+            android:id="@+id/et_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:inputType="numberDecimal"
+            android:hint="Price"
+            android:minHeight="@dimen/spacing_xmlarge"
+            />
+
+        <EditText
+            style="@style/EditText.Flat.Grey"
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:lines="3"
+            android:hint="Description"
+            android:minHeight="@dimen/spacing_xmlarge"
+            />
+
+        <EditText
+            style="@style/EditText.Flat.Grey"
+            android:id="@+id/et_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:hint="Tags"
+            android:minHeight="@dimen/spacing_xmlarge"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:text="IMAGES"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/grey_40"
+            app:fontFamily="sans-serif-medium"
+            />
+
+        <TextView
+            android:id="@+id/tv_image_notif"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please add an image to the listing!"
+            />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/bt_photos"
+            android:text="ADD IMAGE"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
