@@ -12,15 +12,22 @@ class MarketObject : NSObject {
     var imageURL : String
     var name : String
     var price : String
-    var category : String
+    var tags : String
     var brand : String
+    var descr : String
+    var seller_uid : String
+    var seller_charity : String
     
-    init(imageURL : String, name : String, price : String, category : String, brand : String) {
+    init(imageURL : String, name : String, price : String, tags : String,
+         brand : String, description: String, seller_uid : String, seller_charity : String) {
         self.imageURL = imageURL
         self.name = name
         self.price = price
-        self.category = category
+        self.tags = tags
         self.brand = brand
+        self.descr = description
+        self.seller_uid = seller_uid
+        self.seller_charity = seller_charity
         super.init()
     }
 }

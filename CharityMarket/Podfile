@@ -6,7 +6,8 @@ target 'CharityMarket' do
   use_frameworks!
 
   # Pods for CharityMarket
-  pod 'Firebase/Core'
-
+	pod 'Firebase/Core'
+	pod 'Firebase/Firestore'
+	pod 'GravitySliderFlowLayout'
 
 end

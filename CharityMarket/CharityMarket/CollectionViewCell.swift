@@ -23,19 +23,23 @@ class CollectionViewCell: UICollectionViewCell {
         cellImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         cellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        cellImageView.contentMode = .scaleAspectFit
+        cellImageView.contentMode = .scaleAspectFill
+        cellImageView.clipsToBounds = true
         cellImageView.image = UIImage(named: "placeholder")
         
         // Add cellLabel to contentView
         contentView.addSubview(cellLabel)
         cellLabel.translatesAutoresizingMaskIntoConstraints = false
-        cellLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        cellLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        cellLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        cellLabel.leftAnchor.constraint(equalTo: cellImageView.leftAnchor).isActive = true
+        cellLabel.rightAnchor.constraint(equalTo: cellImageView.rightAnchor).isActive = true
+        cellLabel.bottomAnchor.constraint(equalTo: cellImageView.bottomAnchor).isActive = true
         
-        cellLabel.font = UIFont(name: "Roboto", size: 18.0)
-        cellLabel.textColor = UIColor.black
+        cellLabel.font = UIFont(name: "Roboto", size: 15.0)
+        cellLabel.textColor = UIColor.white
         cellLabel.text = "Loading..."
+        cellLabel.textAlignment = .center
+        cellLabel.adjustsFontSizeToFitWidth = true
+        cellLabel.backgroundColor = UIColor.black.withAlphaComponent(0.75)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,6 +49,7 @@ class CollectionViewCell: UICollectionViewCell {
 
 extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
+        self.image = UIImage(named: "placeholder.png")
         URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
             (data, response, error) -> Void in
             DispatchQueue.main.async {

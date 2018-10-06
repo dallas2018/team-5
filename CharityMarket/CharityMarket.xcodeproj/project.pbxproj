@@ -17,6 +17,7 @@
 		3124036A21684F4C00FB3592 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124036921684F4C00FB3592 /* CollectionViewCell.swift */; };
 		3124036C216851BF00FB3592 /* MarketObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124036B216851BF00FB3592 /* MarketObject.swift */; };
 		31B0BF262168624D0072D21F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31B0BF252168624D0072D21F /* GoogleService-Info.plist */; };
+		31E0D4F02168923700D22570 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E0D4EF2168923700D22570 /* ZoomAndSnapFlowLayout.swift */; };
 		9EF7C185E96482944BEE3B36 /* Pods_CharityMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D972268398F46978DB4D4F03 /* Pods_CharityMarket.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		3124036921684F4C00FB3592 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3124036B216851BF00FB3592 /* MarketObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketObject.swift; sourceTree = "<group>"; };
 		31B0BF252168624D0072D21F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31E0D4EF2168923700D22570 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		D972268398F46978DB4D4F03 /* Pods_CharityMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharityMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA3F8E1CD9452CDE003DFF4 /* Pods-CharityMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityMarket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				3124035521683DF600FB3592 /* ViewController.swift */,
 				3124036521684AC400FB3592 /* MarketPlaceViewController.swift */,
 				3124036721684B8B00FB3592 /* TableViewCell.swift */,
+				31E0D4EF2168923700D22570 /* ZoomAndSnapFlowLayout.swift */,
 				3124036B216851BF00FB3592 /* MarketObject.swift */,
 				3124036921684F4C00FB3592 /* CollectionViewCell.swift */,
 				3124035721683DF600FB3592 /* Main.storyboard */,
@@ -204,14 +207,30 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GravitySliderFlowLayout/GravitySliderFlowLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GravitySliderFlowLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3124036A21684F4C00FB3592 /* CollectionViewCell.swift in Sources */,
+				31E0D4F02168923700D22570 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				3124035621683DF600FB3592 /* ViewController.swift in Sources */,
 				3124036C216851BF00FB3592 /* MarketObject.swift in Sources */,
 				3124036821684B8B00FB3592 /* TableViewCell.swift in Sources */,
