@@ -4,28 +4,35 @@ const app = express()
 const port = process.env.PORT || 3000;
 const admin = require('firebase-admin');
 
-var serviceAccount = require(process.env.GOOGLE_SA);
+const serviceAccount = require(GOOGLE_SA);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://jpmc4g-18.firebaseio.com"
+    databaseURL: "https://jpmc4g-18.firebaseio.com",
+    storageBucket: "jpmc4g-18.appspot.com"
 });
 
-var db = admin.firestore();
+const db = admin.firestore();
 db.settings({ timestampsInSnapshots: true });
-
-db.collection('charity').get()
-    .then((snapshot) => {
-      snapshot.forEach((doc) => {
-        console.log(doc.id, '=>', doc.data());
-      });
-    })
-    .catch((err) => {
-      console.log('Error getting documents', err);
-    });
 
 app.get('/', function (req, res) {
     res.send('Hello World!')
+})
+
+app.get('/listings/all', function (req, res) {
+    var listings = {};
+    db.collection('listings').get()
+        .then((snapshot) => {
+            snapshot.forEach((doc) => {
+                listings[doc.id] = doc.data();
+            });
+            console.log('/listings/all requested')
+            res.json(listings);
+        })
+        .catch((err) => {
+            console.log('Error getting documents', err);
+            res.send('{}');
+        });
 })
 
 app.listen(port, () => console.log(`Express server is listening on port ${port}!`))
