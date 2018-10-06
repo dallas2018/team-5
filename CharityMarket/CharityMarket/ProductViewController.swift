@@ -32,7 +32,9 @@ class ProductViewController : UIViewController
     
     @IBAction func purchase()
     {
-        
+        let purchaseVC = self.storyboard?.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
+        purchaseVC.marketObject = marketObject
+        self.navigationController?.pushViewController(purchaseVC, animated: true)
     }
     
     @IBAction func cancelPressed()
