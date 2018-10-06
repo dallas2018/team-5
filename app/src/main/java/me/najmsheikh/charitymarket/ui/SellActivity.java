@@ -11,10 +11,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
 import me.najmsheikh.charitymarket.R;
+import me.najmsheikh.charitymarket.data.Listing;
 import me.najmsheikh.charitymarket.ui.sellerfragments.ProductInfoFragment;
 
 public class SellActivity extends BaseActivity {
+
+    public Listing listing = new Listing();
 
     private enum State {
         DETAILS,
@@ -23,6 +27,8 @@ public class SellActivity extends BaseActivity {
     }
 
     State[] array_state = new State[] { State.DETAILS, State.CHARITIES, State.CONFIRMATION };
+
+    public String imageLink;
 
     private View line_first, line_second;
     private ImageView image_shipping, image_payment, image_confirm;
@@ -40,6 +46,13 @@ public class SellActivity extends BaseActivity {
 
         displayFragment(State.DETAILS);
     }
+
+    public void submitListing() {
+        FirebaseFirestore.getInstance().collection("listings")
+                .add(listing);
+    }
+
+
 
     private void initComponent() {
         line_first = (View) findViewById(R.id.line_first);
