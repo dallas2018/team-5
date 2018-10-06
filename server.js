@@ -202,6 +202,7 @@ app.post('/vision', function (req, res) {
     function getPrice() {
         // Return new promise 
         return new Promise(function (resolve, reject) {
+            console.log("TERMS: ", terms);
             // Do async job
             request.post({
                 "headers": { "content-type": "application/json" },
@@ -213,19 +214,19 @@ app.post('/vision', function (req, res) {
                 if (err) {
                     reject(err);
                 } else {
-                    
+                    resolve(JSON.parse(body));
                     console.log("Price: ", JSON.parse(body));
                 }
             });
         });
     }
 
-    const pricePromise = getPrice().then(results => {
-        response.price = JSON.parse(body);
-    })
-    .catch(err => {
-        console.error('ERROR:', err);
-    });
+    // const pricePromise = getPrice().then(results => {
+    //     response.price = results;
+    // })
+    // .catch(err => {
+    //     console.error('ERROR:', err);
+    // });
 
     
 
@@ -245,11 +246,16 @@ app.post('/vision', function (req, res) {
     //     });
     // });
 
-    Promise.all([labelPromise, logoPromise, webPromise, pricePromise]).then(values => {
+    Promise.all([labelPromise, logoPromise, webPromise]).then(values => {
         console.log(values);
 
         // Sending back to client
-        res.json(response);
+        // res.json(response);
+    }).then(results => {
+        getPrice().then(results => {
+            response.price = results;
+            res.json(response);
+        });
     })
 });
 
