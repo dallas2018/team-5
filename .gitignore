@@ -430,3 +430,5 @@ typings/
 # Serverless directories
 .serverless
 
+# CLARIFAI KEY
+clarifai.key
