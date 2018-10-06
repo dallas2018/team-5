@@ -113,6 +113,7 @@ app.post('/upload', multer.single('file'), function (req, res) {
 
 app.post('/vision', function (req, res) {
     var response = new Object();
+    response.tags = [];
 
     var terms = [];
 
@@ -126,24 +127,26 @@ app.post('/vision', function (req, res) {
         .then(results => {
             const labels = results[0].labelAnnotations;
             console.log('Labels:');
-            labels.forEach(label => console.log(label.description));
+            labels.forEach(label => {
+                console.log(label.description);
+                response.tags.push(label.description);
+            });
 
+            // Getting the first match for title and rest for tags
             terms.push(labels[0].description);
+            response.title = labels[0].description;
+            response.tags.shift();
         })
         .catch(err => {
             console.error('ERROR:', err);
         });
-    
-        const logoPromise = client
+
+    const logoPromise = client
         .logoDetection(fileName)
         .then(results => {
             const logos = results[0].logoAnnotations;
             console.log('Logos:');
             logos.forEach(logo => console.log(logo));
-
-            if (logos[0]){
-                terms.push(logos[0]);
-            }
         })
         .catch(err => {
             console.error('ERROR:', err);
@@ -182,7 +185,7 @@ app.post('/vision', function (req, res) {
                 });
 
                 terms.push(webDetection.webEntities[0].description);
-                // response.webEntity = webDetection.webEntities[0].description;
+                response.brand = webDetection.webEntities[0].description;
             }
 
             if (webDetection.bestGuessLabels.length) {
@@ -195,30 +198,58 @@ app.post('/vision', function (req, res) {
             }
         })
 
-    Promise.all([labelPromise, logoPromise, webPromise]).then(values => {
+
+    function getPrice() {
+        // Return new promise 
+        return new Promise(function (resolve, reject) {
+            // Do async job
+            request.post({
+                "headers": { "content-type": "application/json" },
+                "url": "https://us-central1-object-recognition-187803.cloudfunctions.net/function-1",
+                "body": JSON.stringify({
+                    "terms": terms
+                })
+            }, function (err, resp, body) {
+                if (err) {
+                    reject(err);
+                } else {
+                    
+                    console.log("Price: ", JSON.parse(body));
+                }
+            });
+        });
+    }
+
+    const pricePromise = getPrice().then(results => {
+        response.price = JSON.parse(body);
+    })
+    .catch(err => {
+        console.error('ERROR:', err);
+    });
+
+    
+
+    // const pricePromise = new Promise(function (resolve, reject) => {
+    //     return request.post({
+    //         "headers": { "content-type": "application/json" },
+    //         "url": "https://us-central1-object-recognition-187803.cloudfunctions.net/function-1",
+    //         "body": JSON.stringify({
+    //             "terms": terms
+    //         })
+    //     }, (error, response, body) => {
+    //         if (error) {
+    //             return console.dir(error);
+    //         }
+    //         response.price = JSON.parse(body);
+    //         console.log("Price: ", response.price);
+    //     });
+    // });
+
+    Promise.all([labelPromise, logoPromise, webPromise, pricePromise]).then(values => {
         console.log(values);
 
-        request.post({
-            "headers": { "content-type": "application/json" },
-            "url": "https://us-central1-object-recognition-187803.cloudfunctions.net/function-1",
-            "body": JSON.stringify({
-                "terms": terms
-            })
-        }, (error, response, body) => {
-            if(error) {
-                return console.dir(error);
-            }
-            console.log(JSON.parse(body));
-        });
-
-        request({
-            uri: 'https://us-central1-object-recognition-187803.cloudfunctions.net/function-1',
-            json: true,
-            qs: {
-                terms: terms
-            }
-        })
-        res.json(terms);
+        // Sending back to client
+        res.json(response);
     })
 });
 
