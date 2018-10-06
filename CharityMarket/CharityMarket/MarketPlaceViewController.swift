@@ -150,6 +150,15 @@ extension MarketPlaceViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let marketItem = self.data[collectionView.tag][indexPath.row]
+        let productVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        productVC.marketObject = marketItem
+        let navController = UINavigationController(rootViewController: productVC)
+        self.present(navController, animated: true, completion: nil)
         print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            collectionView.deselectItem(at: indexPath, animated: true)
+        }
     }
 }

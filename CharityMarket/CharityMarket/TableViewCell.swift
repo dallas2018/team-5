@@ -21,8 +21,6 @@ class TableViewCell: UITableViewCell {
         collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "collectionViewCell")
-        
-        collectionView.backgroundColor = .clear
     }
     
     required init?(coder aDecoder: NSCoder) {

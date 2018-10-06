@@ -45,6 +45,12 @@ class CollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override var isSelected: Bool {
+        didSet {
+            self.cellImageView.alpha = isSelected ? 0.5 : 1.0
+        }
+    }
 }
 
 extension UIImageView {
