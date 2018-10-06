@@ -40,6 +40,8 @@ class CollectionViewCell: UICollectionViewCell {
         cellLabel.textAlignment = .center
         cellLabel.adjustsFontSizeToFitWidth = true
         cellLabel.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        
+        contentView.backgroundColor = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
