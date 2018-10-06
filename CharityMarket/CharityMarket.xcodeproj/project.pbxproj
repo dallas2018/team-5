@@ -12,6 +12,16 @@
 		3124035921683DF600FB3592 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3124035721683DF600FB3592 /* Main.storyboard */; };
 		3124035B21683DF700FB3592 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3124035A21683DF700FB3592 /* Assets.xcassets */; };
 		3124035E21683DF700FB3592 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3124035C21683DF700FB3592 /* LaunchScreen.storyboard */; };
+		705843E22168954400C0AAE3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705843E12168954400C0AAE3 /* Bolts.framework */; };
+		705843E42168955B00C0AAE3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705843E32168955B00C0AAE3 /* FBSDKCoreKit.framework */; };
+		705843E62168956500C0AAE3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705843E52168956500C0AAE3 /* FBSDKLoginKit.framework */; };
+		7092F17E2168734800A46D0E /* facebookLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 7092F17D2168734700A46D0E /* facebookLog.png */; };
+		7092F1822168744A00A46D0E /* googleLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 7092F1812168744A00A46D0E /* googleLog.png */; };
+		7092F18A216884EC00A46D0E /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092F189216884EC00A46D0E /* Slide.swift */; };
+		7092F18C2168850B00A46D0E /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7092F18B2168850B00A46D0E /* Slide.xib */; };
+		70E9573921685EAB003643AD /* backGround.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 70E9573821685A1D003643AD /* backGround.mp4 */; };
+		70E9573B21686B01003643AD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70E9573A21686B01003643AD /* Roboto-Regular.ttf */; };
+		70E9573D21686EE3003643AD /* unitedWayLogoTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E9573C21686EE3003643AD /* unitedWayLogoTransparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		3124035A21683DF700FB3592 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3124035D21683DF700FB3592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3124035F21683DF700FB3592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		705843E12168954400C0AAE3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		705843E32168955B00C0AAE3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		705843E52168956500C0AAE3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		7092F17D2168734700A46D0E /* facebookLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLog.png; sourceTree = "<group>"; };
+		7092F1812168744A00A46D0E /* googleLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleLog.png; sourceTree = "<group>"; };
+		7092F189216884EC00A46D0E /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		7092F18B2168850B00A46D0E /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		70E9573821685A1D003643AD /* backGround.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = backGround.mp4; sourceTree = "<group>"; };
+		70E9573A21686B01003643AD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		70E9573C21686EE3003643AD /* unitedWayLogoTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unitedWayLogoTransparent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705843E22168954400C0AAE3 /* Bolts.framework in Frameworks */,
+				705843E42168955B00C0AAE3 /* FBSDKCoreKit.framework in Frameworks */,
+				705843E62168956500C0AAE3 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +77,32 @@
 		3124035221683DF600FB3592 /* CharityMarket */ = {
 			isa = PBXGroup;
 			children = (
+				705843E02168952700C0AAE3 /* Frameworks */,
 				3124035321683DF600FB3592 /* AppDelegate.swift */,
 				3124035521683DF600FB3592 /* ViewController.swift */,
 				3124035721683DF600FB3592 /* Main.storyboard */,
 				3124035A21683DF700FB3592 /* Assets.xcassets */,
 				3124035C21683DF700FB3592 /* LaunchScreen.storyboard */,
 				3124035F21683DF700FB3592 /* Info.plist */,
+				70E9573821685A1D003643AD /* backGround.mp4 */,
+				70E9573A21686B01003643AD /* Roboto-Regular.ttf */,
+				70E9573C21686EE3003643AD /* unitedWayLogoTransparent.png */,
+				7092F17D2168734700A46D0E /* facebookLog.png */,
+				7092F1812168744A00A46D0E /* googleLog.png */,
+				7092F189216884EC00A46D0E /* Slide.swift */,
+				7092F18B2168850B00A46D0E /* Slide.xib */,
 			);
 			path = CharityMarket;
+			sourceTree = "<group>";
+		};
+		705843E02168952700C0AAE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				705843E52168956500C0AAE3 /* FBSDKLoginKit.framework */,
+				705843E32168955B00C0AAE3 /* FBSDKCoreKit.framework */,
+				705843E12168954400C0AAE3 /* Bolts.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +163,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E9573D21686EE3003643AD /* unitedWayLogoTransparent.png in Resources */,
+				70E9573921685EAB003643AD /* backGround.mp4 in Resources */,
 				3124035E21683DF700FB3592 /* LaunchScreen.storyboard in Resources */,
+				70E9573B21686B01003643AD /* Roboto-Regular.ttf in Resources */,
+				7092F17E2168734800A46D0E /* facebookLog.png in Resources */,
 				3124035B21683DF700FB3592 /* Assets.xcassets in Resources */,
 				3124035921683DF600FB3592 /* Main.storyboard in Resources */,
+				7092F1822168744A00A46D0E /* googleLog.png in Resources */,
+				7092F18C2168850B00A46D0E /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7092F18A216884EC00A46D0E /* Slide.swift in Sources */,
 				3124035621683DF600FB3592 /* ViewController.swift in Sources */,
 				3124035421683DF600FB3592 /* AppDelegate.swift in Sources */,
 			);
@@ -283,8 +331,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Z2N5LACXQ;
+				DEVELOPMENT_TEAM = 93U924K22Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CharityMarket/Frameworks",
+				);
 				INFOPLIST_FILE = CharityMarket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,8 +354,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Z2N5LACXQ;
+				DEVELOPMENT_TEAM = 93U924K22Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CharityMarket/Frameworks",
+				);
 				INFOPLIST_FILE = CharityMarket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
