@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 const admin = require('firebase-admin');
 const vision = require('@google-cloud/vision');
 
-const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+const serviceAccount = require('./jpmc4g-18-2c6ced10667d.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -108,20 +108,88 @@ app.post('/upload', multer.single('file'), function (req, res) {
 });
 
 app.get('/label', function (req, res) {
+
+    var response = new Object();
+
     const bucketName = 'jpmc4g-18.appspot.com';
     const fileName = 'test/swell.jpg';
     const client = new vision.ImageAnnotatorClient();
-    client
+    
+    const labelPromise = client
         .labelDetection(`gs://${bucketName}/${fileName}`)
         .then(results => {
             const labels = results[0].labelAnnotations;
-
             console.log('Labels:');
             labels.forEach(label => console.log(label.description));
+
+            response.label = labels[0].description;
         })
         .catch(err => {
             console.error('ERROR:', err);
         });
+
+    const logoPromise = client
+        .logoDetection(`gs://${bucketName}/${fileName}`)
+        .then(results => {
+            const logos = results[0].logoAnnotations;
+            console.log('Logos:');
+            logos.forEach(logo => console.log(logo));
+
+            response.brand = logos[0]
+        })
+        .catch(err => {
+            console.error('ERROR:', err);
+        });
+
+    const webPromise = client
+        .webDetection(`gs://${bucketName}/${fileName}`)
+        .then(results => {
+            const webDetection = results[0].webDetection;
+
+            if (webDetection.fullMatchingImages.length) {
+                console.log(
+                    `Full matches found: ${webDetection.fullMatchingImages.length}`
+                );
+                webDetection.fullMatchingImages.forEach(image => {
+                    console.log(`  URL: ${image.url}`);
+                    console.log(`  Score: ${image.score}`);
+                });
+            }
+
+            if (webDetection.partialMatchingImages.length) {
+                console.log(
+                    `Partial matches found: ${webDetection.partialMatchingImages.length}`
+                );
+                webDetection.partialMatchingImages.forEach(image => {
+                    console.log(`  URL: ${image.url}`);
+                    console.log(`  Score: ${image.score}`);
+                });
+            }
+
+            if (webDetection.webEntities.length) {
+                console.log(`Web entities found: ${webDetection.webEntities.length}`);
+                webDetection.webEntities.forEach(webEntity => {
+                    console.log(`  Description: ${webEntity.description}`);
+                    console.log(`  Score: ${webEntity.score}`);
+                });
+
+                response.webEntity = webDetection.webEntities[0].description;
+            }
+
+            if (webDetection.bestGuessLabels.length) {
+                console.log(
+                    `Best guess labels found: ${webDetection.bestGuessLabels.length}`
+                );
+                webDetection.bestGuessLabels.forEach(label => {
+                    console.log(`  Label: ${label.label}`);
+                });
+            }
+        })
+
+    Promise.all([labelPromise, logoPromise, webPromise]).then(values => {
+        console.log(values);
+        res.json(response);
+    })
 })
 
 
