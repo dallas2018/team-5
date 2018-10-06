@@ -16,9 +16,12 @@
 		3124036821684B8B00FB3592 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124036721684B8B00FB3592 /* TableViewCell.swift */; };
 		3124036A21684F4C00FB3592 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124036921684F4C00FB3592 /* CollectionViewCell.swift */; };
 		3124036C216851BF00FB3592 /* MarketObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124036B216851BF00FB3592 /* MarketObject.swift */; };
+		31B0BF262168624D0072D21F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31B0BF252168624D0072D21F /* GoogleService-Info.plist */; };
+		9EF7C185E96482944BEE3B36 /* Pods_CharityMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D972268398F46978DB4D4F03 /* Pods_CharityMarket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10E7AB482423A70F34DF3D6F /* Pods-CharityMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityMarket.release.xcconfig"; path = "Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket.release.xcconfig"; sourceTree = "<group>"; };
 		3124035021683DF600FB3592 /* CharityMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharityMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3124035321683DF600FB3592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3124035521683DF600FB3592 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		3124036721684B8B00FB3592 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3124036921684F4C00FB3592 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3124036B216851BF00FB3592 /* MarketObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketObject.swift; sourceTree = "<group>"; };
+		31B0BF252168624D0072D21F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D972268398F46978DB4D4F03 /* Pods_CharityMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharityMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA3F8E1CD9452CDE003DFF4 /* Pods-CharityMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityMarket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF7C185E96482944BEE3B36 /* Pods_CharityMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				3124035221683DF600FB3592 /* CharityMarket */,
 				3124035121683DF600FB3592 /* Products */,
+				73E880497CB9AE4752A303B4 /* Pods */,
+				6579ABF4422A42FC5C677CA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +81,26 @@
 				3124035A21683DF700FB3592 /* Assets.xcassets */,
 				3124035C21683DF700FB3592 /* LaunchScreen.storyboard */,
 				3124035F21683DF700FB3592 /* Info.plist */,
+				31B0BF252168624D0072D21F /* GoogleService-Info.plist */,
 			);
 			path = CharityMarket;
+			sourceTree = "<group>";
+		};
+		6579ABF4422A42FC5C677CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D972268398F46978DB4D4F03 /* Pods_CharityMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73E880497CB9AE4752A303B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3F8E1CD9452CDE003DFF4 /* Pods-CharityMarket.debug.xcconfig */,
+				10E7AB482423A70F34DF3D6F /* Pods-CharityMarket.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3124036221683DF700FB3592 /* Build configuration list for PBXNativeTarget "CharityMarket" */;
 			buildPhases = (
+				922B56650194FF770EA014E2 /* [CP] Check Pods Manifest.lock */,
 				3124034C21683DF600FB3592 /* Sources */,
 				3124034D21683DF600FB3592 /* Frameworks */,
 				3124034E21683DF600FB3592 /* Resources */,
+				D64D079B3080FED6C3B5E7AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,12 +164,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				3124035E21683DF700FB3592 /* LaunchScreen.storyboard in Resources */,
+				31B0BF262168624D0072D21F /* GoogleService-Info.plist in Resources */,
 				3124035B21683DF700FB3592 /* Assets.xcassets in Resources */,
 				3124035921683DF600FB3592 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		922B56650194FF770EA014E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CharityMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D64D079B3080FED6C3B5E7AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CharityMarket/Pods-CharityMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3124034C21683DF600FB3592 /* Sources */ = {
@@ -296,6 +375,7 @@
 		};
 		3124036321683DF700FB3592 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA3F8E1CD9452CDE003DFF4 /* Pods-CharityMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +394,7 @@
 		};
 		3124036421683DF700FB3592 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10E7AB482423A70F34DF3D6F /* Pods-CharityMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
